@@ -7,6 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Commmitando o icomitavel</h1>
+    
+<div id="root">aaaa</div>
+
+<script >
+    fetch("https://api.adviceslip.com/advice").then((response)=>response.json())
+    .then((response)=> document.querySelector("#root").innerHTML = `${response.slip.advice}`)
+</script>
 </body>
 </html>
