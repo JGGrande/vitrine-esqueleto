@@ -4,7 +4,7 @@
         ?>
         <script>
             Swal.fire({
-            icon: 'error',
+            icon: "error",
             title: 'Oops...',
             text: '<?=$msg?>',
             }).then((result) => {

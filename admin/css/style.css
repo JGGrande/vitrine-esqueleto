@@ -31,6 +31,10 @@ iframe {
 }
 
 .login h1 {
-	color: #000;
+	color: #be55d8;
 	font-weight: bold;
+}
+.bg-wall{
+	background-image: linear-gradient(170deg, #ff86ed 0, #f479e9 16.67%, #db68e2 33.33%, #be55d8 50%, #9f43cf 66.67%, #8037c8 83.33%, #6030c3 100%);
+	height: 100vh;
 }
