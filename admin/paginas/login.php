@@ -1,27 +1,39 @@
 <?php
+definirBg("linear-gradient(170deg, #ff86ed 0, #f479e9 16.67%, #db68e2 33.33%, #be55d8 50%, #9f43cf 66.67%, #8037c8 83.33%, #6030c3 100%);");
     if($_POST){
         $login = $_POST['login'] ?? null;
         $senha = $_POST['senha'] ?? null;
         
         if(empty($login) or empty($senha)){
             mensagemErro("Campos não podem ser vazios!");
-        }
+        }else{
 
-        $sql = "SELECT id,nome,login,senha FROM usuario where login = :login and ativo = 'S' limit 1";
-        $consulta = $pdo->prepare($sql);
-        $consulta->bindParam(":login", $login);       
-        $consulta->execute();
+            $sql = "SELECT id,nome,login,senha FROM usuario where login = :login and ativo = 'S' limit 1";
+            $consulta = $pdo->prepare($sql);
+            $consulta->bindParam(":login", $login);       
+            $consulta->execute();
 
-        $dados = $consulta->fetch(PDO::FETCH_OBJ);
- 
-        if(!isset($dados->id)){
-            mensagemErro("Usuario não encontrado ou inativo.");
+            $dados = $consulta->fetch(PDO::FETCH_OBJ);
+
+            //bill
+            //gates
+            if(!isset($dados->id)){
+                mensagemErro("Usuario não encontrado ou inativo.");
+            }else if( !password_verify($senha, $dados->senha)  ){
+                mensagemErro("Senha invalida!");
+            }else{
+                //logado
+                $_SESSION["usuario"] = array(
+                    "id" => $dados->id,
+                    "nome" => $dados->nome,
+                    "login" => $dados->login
+                );
+                
+                echo"<script>location.href='paginas/home'</script>";
+                exit;
+            }
         }
-        if(!isset($dados->senha)){
-            mensagemErro("Senha invalida!");
-        }
-        
-        //echo $login;
+               
     }
 
     

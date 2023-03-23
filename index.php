@@ -75,7 +75,7 @@
     ?>
 
     <footer>
-        <p>Desenvolvido por Maycon Yorrahn Palmeiras</p>
+        <p>Desenvolvido por Grandão</p>
     </footer>
 
     <script src="js/jquery-3.6.0.min.js"></script>

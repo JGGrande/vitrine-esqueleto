@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require"../config.php";
 ?>
 
@@ -56,8 +57,32 @@
     
     <?php 
         require"funcoes.php";
+       
+        if( !isset($_SESSION["usuario"])){
+            require"paginas/login.php";
+        }else{
+            $pagina = "home";
 
-        require"paginas/login.php";
+            if(isset($_GET["param"])){
+                $pagina = $_GET["param"];
+                $p = explode("/", $pagina);
+                $pasta = $p[0] ?? NULL;
+                $pagina = $p[1] ?? NULL;
+                $id = $p[2] ?? NULL;
+                
+            }
+            $page = "{$pasta}/{$pagina}";
+            require"header.php";
+
+            if(file_exists("{$page}.php")){
+                require "{$page}.php";
+            }else{
+               require"error.php";
+            }
+            //require"fooder.php";
+            require"footer.php";
+        }
+        
 
         //mensagemErro("Oláaa rede");
     ?>

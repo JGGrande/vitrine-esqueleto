@@ -14,3 +14,12 @@
         <?php
         exit;
     } //fim da função
+    function definirBg($codigoCss) {
+        ?>
+        <script>
+            document.querySelector("body").style.backgroundImage = "<?=$codigoCss?>";
+        </script>
+
+
+        <?php
+    }
