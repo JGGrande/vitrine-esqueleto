@@ -1,0 +1,24 @@
+<div class="card">
+    <div class="card-body">
+    <form  method="POST">
+        <label for="nome" class="">Nome do produto</label>
+        <input type="text" name="nome" id="nome" class="form-control" required placeholder="Digite o nome da categoria!" value="">
+        <br>
+        <label for="valor">Valor</label>
+        <input type="number" name="valor" id="valor" class="form-control" required placeholder="" value="">
+        <br>
+        <label for="descricao">Descrição</label>
+        <textarea name="" id="" class="form-control" required placeholder="" value=""></textarea>
+        <br>
+        <label for="imagem">imagens</label>
+        <input type="file" name="imagens" id="imagem" class="" required placeholder="" value="">
+        <br>
+        <label for="categoria">Categoria</label>
+        <select name="categoria" id="categoria" class="f" value="">
+            <option value="">Categorias</option>
+        </select>
+        <br>
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
+    </div>
+</div>

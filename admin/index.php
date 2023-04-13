@@ -72,15 +72,17 @@
                 
             }
             $page = "{$pasta}/{$pagina}";
-            require"header.php";
+            
 
             if(file_exists("{$page}.php")){
+                require"header.php";
                 require "{$page}.php";
+                require"footer.php";
             }else{
                require"error.php";
             }
             //require"fooder.php";
-            require"footer.php";
+            
         }
         
 
