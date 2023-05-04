@@ -16,6 +16,19 @@
         <label for="categoria">Categoria</label>
         <select name="categoria" id="categoria" class="f" value="">
             <option value="">Categorias</option>
+            
+            <?php
+               $sql = "SELECT id, nome FROM categoria;";
+               $consulta = $pdo->prepare($sql);
+               $consulta->execute();
+               $categorias = $consulta->fetchAll(PDO::FETCH_OBJ);
+               
+                foreach($categorias as $categoria){
+            ?>
+                <option value="<?php echo"$categoria->id"?>"><?php echo"$categoria->nome"?></option>
+            <?php
+            } 
+            ?>     
         </select>
         <br>
         <button type="submit" class="btn btn-primary">Cadastrar</button>
