@@ -5,9 +5,13 @@
         if(empty($id)){
             mensagemErro("Erro ao Deletar!");
         }else{
-            print_r("teste");
-            confirmarDelete($id);
-            echo"<script>location.href='listar/categorias'</script>";
+            $sql = "DELETE FROM categoria WHERE id = :id";
+            $consulta = $pdo->prepare($sql);
+            $consulta->bindParam(":id",$id);
+            $consulta->execute();
+                       
+            mensagemDelete();
+
         }
 
     }
