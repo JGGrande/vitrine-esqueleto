@@ -15,12 +15,18 @@
         exit;
     } //fim da função
 
-    function mensagemDelete(){
+    function mensagemSucesso($msg,$url){
         ?>
-            <script>
-            Swal.fire('Deleted!','Deletado com sucesso','success').then(result=> window.location.href = "listar/categorias" );
-            
-            </script>
+        <script>
+            Swal.fire({
+            icon: "success",
+            title: 'Yessss',
+            text: '<?=$msg?>',
+            }).then((result) => {
+                //history.back(); 
+                location.href='<?=$url?>'
+            })
+        </script>
         <?php
         exit;
     }

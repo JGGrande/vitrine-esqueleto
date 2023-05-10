@@ -35,8 +35,8 @@ if(isset($_POST)){
             //Executa a query
             $consulta->execute();
             //Redireciona o Usuario para a pagina listar/categorias
-            echo"<script>location.href='listar/categorias'</script>";
-
+            mensagemSucesso("Criado com sucesso","listar/categorias");
+     
         //Entra se a categoria já existir, então o registro será atualizado envez de ser criado    
         }else{
             //a varaiavel recebe em string a query sql que vai ser executado 
@@ -49,7 +49,9 @@ if(isset($_POST)){
             //Executa a query
             $consulta->execute();
             //Redireciona para listar/categorias
-            echo"<script>location.href='listar/categorias'</script>";
+            mensagemSucesso("Editado com sucesso", "listar/categorias");
+        
+            
         }
 
 }
