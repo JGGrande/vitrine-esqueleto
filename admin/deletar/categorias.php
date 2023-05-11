@@ -10,7 +10,6 @@
             $consulta->bindParam(":id",$id);
             $consulta->execute();
                        
-            mensagemDelete();
 
         }
 

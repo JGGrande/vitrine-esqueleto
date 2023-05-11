@@ -18,6 +18,7 @@
     <script src="js/lightbox-plus-jquery.min.js"></script>
 
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
     <script type="text/javascript" src="vendor/summernote/summernote.min.js"></script>
     <script type="text/javascript" src="vendor/summernote/summernote-bs4.min.js"></script>
