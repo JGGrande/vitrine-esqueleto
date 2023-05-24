@@ -31,7 +31,6 @@
         exit;
     }
 
-    
 
     function definirBg($codigoCss) {
         ?>

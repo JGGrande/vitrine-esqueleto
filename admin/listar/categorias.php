@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-body">
-        <table class="table table-striped ">
+        <table class="table table-striped table-bordered" id="table">
             <thead class="bg-primary">
                 <tr>
                 <th scope="col" class="text-light">ID</th>
@@ -43,6 +43,7 @@
     $(document).ready(() => {
         $('.form-deletar').on('submit', (event) => {
             event.preventDefault();
+            const form =  $(event.currentTarget);
 
             Swal.fire({
                 title: 'Deseja deletar?',
@@ -54,9 +55,7 @@
                 confirmButtonText: 'Sim, delete!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    const form = $(this);
                     const id = form.find('input[name="id"]').val();
-
                     $.ajax({
                         type: 'POST',
                         //url: form.attr('action'),
@@ -67,7 +66,7 @@
                             'Deletado!',
                             'A categoria foi deletada com sucesso.',
                             'success'
-                            ).then( response => window.location.reload(true))
+                            ).then( response => /*window.location.href = 'http://localhost:8888/vitrine-esqueleto/admin/deletar/categorias'*/ null)
                         
                         },
                         error: function(error) {
@@ -89,6 +88,8 @@
 
             
         });
+
+        $('#table').DataTable();
 });
 
 
