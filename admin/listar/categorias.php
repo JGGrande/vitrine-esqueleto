@@ -40,9 +40,8 @@
 </div>
 
 <script>
-    $(document).ready(function() {
-        
-        $('.form-deletar').on('submit', function(event) {
+    $(document).ready(() => {
+        $('.form-deletar').on('submit', (event) => {
             event.preventDefault();
 
             Swal.fire({
@@ -59,22 +58,29 @@
                     const id = form.find('input[name="id"]').val();
 
                     $.ajax({
-                    type: 'POST',
-                    //url: form.attr('action'),
-                    url: 'http://localhost:8888/vitrine-esqueleto/admin/deletar/categorias',
-                    data: { id: id },
-                    success: function(response) {
-                        Swal.fire(
-                        'Deletado!',
-                        'A categoria foi deletada com sucesso.',
-                        'success'
-                    ).then( response => window.location.reload(true))
-                    
-                    },
-                    error: function(error) {
-                        // Lógica para lidar com erros na requisição
-                        console.error('Erro ao excluir a categoria:', error);
-                    }
+                        type: 'POST',
+                        //url: form.attr('action'),
+                        url: 'http://localhost:8888/vitrine-esqueleto/admin/deletar/categorias',
+                        data: { id: id },
+                        success: function(response) {
+                            Swal.fire(
+                            'Deletado!',
+                            'A categoria foi deletada com sucesso.',
+                            'success'
+                            ).then( response => window.location.reload(true))
+                        
+                        },
+                        error: function(error) {
+                            // Lógica para lidar com erros na requisição
+                            console.error('Erro ao excluir a categoria:', error);
+                            Swal.fire({
+                                icon: "error",
+                                title: 'Oops...',
+                                text: 'Erro ao deletar tente novamente',
+                            }).then((result) => {
+                                history.back(); 
+                            })
+                        }
                     });
 
                     

@@ -1,14 +1,14 @@
 <div class="card">
     <div class="card-body">
-    <form  method="POST">
+    <form action="salvar/produtos"  method="POST">
         <label for="nome" class="">Nome do produto</label>
-        <input type="text" name="nome" id="nome" class="form-control" required placeholder="Digite o nome da categoria!" value="">
+        <input type="text" name="nome" id="nome" class="form-control" required placeholder="Digite o nome do produto!" value="">
         <br>
         <label for="valor">Valor</label>
-        <input type="number" name="valor" id="valor" class="form-control" required placeholder="" value="">
+        <input type="number" name="valor" id="valor"  class="form-control" required placeholder="Digite o valor do produto!" value="">
         <br>
         <label for="descricao">Descrição</label>
-        <textarea name="" id="" class="form-control" required placeholder="" value=""></textarea>
+        <textarea name="" id="" class="form-control" required placeholder="Digite a descrição do produto!" value=""></textarea>
         <br>
         <label for="imagem">imagens</label>
         <input type="file" name="imagens" id="imagem" class="" required placeholder="" value="">

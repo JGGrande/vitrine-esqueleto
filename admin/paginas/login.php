@@ -49,7 +49,7 @@ backdrop-filter: blur(5.2px);
 border: 1px solid rgba(255, 255, 255, 0.1);
 ">
 
-    <h1 class="text-center text-light">Efetuar Login</h1>
+    <h1 class="text-center text-primary">Efetuar Login</h1>
     <form  method="POST">
         <label for="login" class="">Login</label>
         <input type="text" name="login" id="login" class="form-control" required placeholder="Porfavor digite o usuario">
